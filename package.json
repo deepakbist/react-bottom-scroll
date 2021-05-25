@@ -1,6 +1,6 @@
 {
   "name": "react-bottom-scroll",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple react component wrapper which automatically scrolls to the bottom of the wrapper.",
   "main": "dist/index.js",
   "dependencies": {},
