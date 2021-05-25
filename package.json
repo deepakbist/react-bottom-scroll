@@ -1,7 +1,7 @@
 {
   "name": "react-bottom-scroll",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple react component wrapper which automatically scrolls to the bottom of the wrapper.",
   "main": "dist/index.js",
   "dependencies": {},
   "devDependencies": {
@@ -30,8 +30,14 @@
     "react-dom": "^16.8.0"
   },
   "files": ["dist"],
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "scroll",
+    "bottom",
+    "chat",
+    "auto scroll"
+  ],
+  "author": "Deepak Bisht",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/deepakbist/react-bottom-scroll/issues"
