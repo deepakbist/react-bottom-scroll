@@ -1,5 +1,5 @@
 import * as React from "react";
-import { DEFAULT_MIN_SCROLL, DEFAULT_STYLE } from "../../const";
+import {  DEFAULT_STYLE } from "../../const";
 
 const ComponentWrapper: React.FC<ComponentWrapperInterface> = (props) => {
   const lastScrolled = React.useRef(0);
@@ -23,10 +23,9 @@ const ComponentWrapper: React.FC<ComponentWrapperInterface> = (props) => {
   const scrollToBottom = () => {
     if (containerRef && containerRef.current) {
       if (
-        (props?.minScroll &&
-          typeof props.minScroll === "number" &&
-          lastScrolled.current < props.minScroll) ||
-        lastScrolled.current < DEFAULT_MIN_SCROLL
+        !props?.minScroll ||
+        (typeof props.minScroll === "number" &&
+          lastScrolled.current < props.minScroll)
       ) {
         if (props.smoothBehavior) {
           bottomRef?.current?.scrollIntoView({ behavior: "smooth" });
@@ -40,7 +39,7 @@ const ComponentWrapper: React.FC<ComponentWrapperInterface> = (props) => {
   };
 
   return (
-    <div ref={containerRef} style={props?.css ? props.css : DEFAULT_STYLE}>
+    <div ref={containerRef} style={props?.css ? {overflowY:'scroll', ...props.css} : DEFAULT_STYLE}>
       {props.children}
       <div ref={bottomRef}></div>
     </div>

@@ -21,7 +21,13 @@ use the component to wrap the content which you want to scroll to the bottom
 ```jsx
 import { ScrollWrapper } from 'react-botttom-scroll';
 
-<ScrollWrapper>
+const wraperstyle = {
+    width: 500,
+    height:500,
+    overflowY: 'auto'
+}
+
+<ScrollWrapper css={wraperstyle} minScroll={80} smoothBehavior>
     {contents}
 </ScrollWrapper>
 

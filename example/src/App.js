@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './App.css'
 import {ScrollWrapper} from 'react-botttom-scroll'
 
 
@@ -47,9 +48,14 @@ function App() {
     </li>
   ));
 
+  const ds = {
+    width: 500,
+    height:400,
+    overflowY:'auto'
+  }
   return (
-    <div>
-      <ScrollWrapper>
+    <div className="App">
+      <ScrollWrapper css={ds} minScroll={80} smoothBehavior>
         <ul>
           {list}
         </ul>
