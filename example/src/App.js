@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
-import './App.css'
-import {ScrollWrapper} from 'react-botttom-scroll'
-
+import { useEffect, useState } from "react";
+import "./App.css";
+import { ScrollWrapper } from "react-botttom-scroll";
 
 const initData = [
   { text: 1 },
@@ -19,8 +18,7 @@ const initData = [
 ];
 
 function App() {
-
-  const [data,setData] = useState(initData);
+  const [data, setData] = useState(initData);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -40,25 +38,37 @@ function App() {
       style={{
         padding: 20,
         margin: 1,
-        backgroundColor: '#34eb83',
-        textAlign: 'center',
+        backgroundColor: "#34eb83",
+        textAlign: "center",
       }}
     >
       {d.text}
     </li>
   ));
 
-  const ds = {
-    width: 500,
-    height:400,
-    overflowY:'auto'
-  }
+  const topCallback = () => {
+    console.log("Reached top of container");
+  };
+
+  const bottomCallback = () => {
+    console.log("Reached bottom of container");
+  };
+
+  const wrapperStyle = {
+    width: 550,
+    height: 550,
+    overflowY: "auto",
+  };
   return (
     <div className="App">
-      <ScrollWrapper css={ds} minScroll={80} smoothBehavior>
-        <ul>
-          {list}
-        </ul>
+      <ScrollWrapper
+        wrapperStyle={wrapperStyle}
+        minScroll={100}
+        smoothBehavior
+        topCallback={topCallback}
+        bottomCallback={bottomCallback}
+      >
+        <ul>{list}</ul>
       </ScrollWrapper>
     </div>
   );
