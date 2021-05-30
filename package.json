@@ -1,7 +1,7 @@
 {
   "name": "react-bottom-scroll",
-  "version": "1.1.1",
-  "description": "A simple react component wrapper which automatically scrolls content to the bottom of the wrapper. Also provides callback methods that are triggered on reaching top or bottom of the wrapper. Can be best used in chat like application. ",
+  "version": "1.1.2",
+  "description": "A simple react component wrapper which automatically scrolls content to the bottom of the wrapper. Also provides callback methods that are triggered on reaching top or bottom of the wrapper. Best suited for chat like application. ",
   "main": "dist/index.js",
   "dependencies": {},
   "devDependencies": {
@@ -33,11 +33,14 @@
   ],
   "keywords": [
     "react",
+    "hooks",
     "scroll",
-    "bottom",
+    "autoscroll",
+    "scroll to bottom",
     "chat",
-    "auto scroll",
-    "bottom scroll"
+    "bottom",
+    "callback",
+    "listener"
   ],
   "author": "Deepak Bisht",
   "license": "ISC",

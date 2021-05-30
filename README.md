@@ -1,6 +1,6 @@
 # react-bottom-scroll
 
-A simple **React component** that wraps the content and automatically scrolls to the bottom of the content.
+A simple **React component** wrapper which automatically scrolls content to the bottom of the wrapper. Also provides callback methods that are triggered on reaching top or bottom of the wrapper. Best suited for chat like application.
 
 ## Installation
 
@@ -44,7 +44,7 @@ const bottomCallback = () => {
   topCallback={topCallback}
   bottomCallback={bottomCallback}
 >
-  {contents}
+  {content}
 </ScrollWrapper>;
 ```
 
@@ -52,11 +52,10 @@ here contents can be a list of div's or any other html elements.
 
 **Props**
 
-
 | Property       | Type     | Default                                   | Description                                                                                                                                                  |
-|----------------|----------|-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -------------- | -------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | wrapperStyle   | object   | {width:500,height:500,overflowY:'scroll'} | CSS properties that will be set on scroll wrapper component. NOTE: CSS should be passed in react style.                                                      |
 | minScroll      | number   | null                                      | minimum scroll from bottom in pixels that should stop autoscroll to bottom if content is changed.                                                            |
 | smoothBehavior | boolean  | false                                     | if smoothBehavior is true scrollBehavior is set to smooth                                                                                                    |
-| topCallback    | function | null                                      | callback function that will be executed once content is scrolled to top of the wrapper. Eg. can be used to load more content on reaching top of the wrapper. |
-| bottomCallback | function | null                                      | callback function that will be executed once content is scrolled to bottom of the wrapper. Eg. can be used to set read status of chat to true or false.      |
+| topCallback    | function | null                                      | callback function that will be triggered once content is scrolled to top of the wrapper. Eg. can be used to load more content on reaching top of the wrapper. |
+| bottomCallback | function | null                                      | callback function that will be triggered once content is scrolled to bottom of the wrapper. Eg. can be used to set read status of chat to true or false.      |
